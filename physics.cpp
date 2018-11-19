@@ -210,9 +210,9 @@ for (i = 0; i < n_x; i++)
 						                     u[v_z_i_][i][j] * u[m_z_i_][i][j]) +
 								     (u[rho_i_][i][j] * III_erg / mi);
 								     
-	u[tem_i_][i][j] = u[pre_i_][i][j] / u[rho_i_][i][j] * mi / 1.6e-12;
-	u[tem_n_][i][j] = u[pre_n_][i][j] / u[rho_n_][i][j] * (mi+me) / 1.6e-12;
-	u[tem_e_][i][j] = u[pre_e_][i][j] / u[rho_i_][i][j] * mi / 1.6e-12;
+	u[tem_i_][i][j] = u[pre_i_][i][j] / u[rho_i_][i][j] * mi / k_b;
+	u[tem_n_][i][j] = u[pre_n_][i][j] / u[rho_n_][i][j] * (mi+me) / k_b;
+	u[tem_e_][i][j] = u[pre_e_][i][j] / u[rho_i_][i][j] * mi / k_b;
 
 
   }
@@ -258,9 +258,9 @@ for (i = 0; i < n_x; i++)
 //	u[tem_e_][i][j] = u[pre_e_][i][j] / u[rho_i_][i][j] * mi / k_b;						  
 
 
-        u[tem_i_][i][j] = u[pre_i_][i][j] / u[rho_i_][i][j] * mi / 1.6e-12;
-	u[tem_n_][i][j] = u[pre_n_][i][j] / u[rho_n_][i][j] * (mi+me) / 1.6e-12;
-	u[tem_e_][i][j] = u[pre_e_][i][j] / u[rho_i_][i][j] * mi / 1.6e-12;	
+        u[tem_i_][i][j] = u[pre_i_][i][j] / u[rho_i_][i][j] * mi / k_b;
+	u[tem_n_][i][j] = u[pre_n_][i][j] / u[rho_n_][i][j] * (mi+me) / k_b;
+	u[tem_e_][i][j] = u[pre_e_][i][j] / u[rho_i_][i][j] * mi / k_b;	
 
 
 
