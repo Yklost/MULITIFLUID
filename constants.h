@@ -4,6 +4,7 @@ const double BIG   = 1.0/SMALL;
 
 const double me = 9.109e-28 ; //g
 const double mi = 1.6726e-24 ; //g
+const double e = 4.8032e-10; //statC
 
 const double k_b=1.381e-16 ; //erg/K
 
@@ -21,7 +22,7 @@ const double beta_0 = 0.7;
 const double gamma_0 = 3.2;
 
 
-const int n_var=36; 
+const int n_var=37; 
 const int n_consvar = 14; 
 const int n_dim = 2; //number dimensions
 
@@ -79,19 +80,20 @@ const int k_ion_ = 23;
 const int k_rec_ = 24;
 const int a_ni_ = 25;
 const int a_ne_ = 26;
+const int a_ei_ = 27;
 
-const int QQQ_  = 27;
-const int Q_N_  = 28;
+const int QQQ_  = 28;
+const int Q_N_  = 29;
 
-const int q_x_ = 29;
-const int q_y_ = 30;
-const int q_z_ = 31;
+const int q_x_ = 30;
+const int q_y_ = 31;
+const int q_z_ = 32;
 
-const int tem_i_ = 32;
-const int tem_n_ = 33;
-const int tem_e_ = 34;
+const int tem_i_ = 33;
+const int tem_n_ = 34;
+const int tem_e_ = 35;
 
-const int vidte_ = 35;
+const int vidte_ = 36;
 
 
 
