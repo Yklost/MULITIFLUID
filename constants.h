@@ -4,13 +4,14 @@ const double BIG   = 1.0/SMALL;
 
 const double me = 9.109e-28 ; //g
 const double mi = 1.6726e-24 ; //g
+const double e = 4.8032e-10; //statC
 
-const double k_b=1.381e-16 ; //erg/K
+const double k_b = 1.381e-16 ; //erg/K
 
 const double me_mi = me/mi;
 
-const double III_erg = 10.e0 * 1.6e-12 ; //eV to erg, first ionisation potential
-const double III_eV = 10.e0;
+const double III_erg = 13.6e0 * 1.6e-12 ; //eV to erg, first ionisation potential
+const double III_eV = 13.e6;
 
 const double eVtoerg = 1.6e-12;
 const double eVtoerg2 = (1.0/6.2415e11)*(1.0/6.2415e11);
@@ -95,14 +96,14 @@ const int vidte_ = 35;
 
 
 
-const double ggg = -1.0;//-1.0; //gravity
+const double ggg = 0.0;//-1.0; //gravity
 const double gam = 5.0/3.0; /// 
 
 
 const double start_x = 0.0;
-const double start_y = 8e7;
+const double start_y = 8.0e7;
 
-const double end_x = 2e8;
+const double end_x = 2.0e8;
 const double end_y = 1.5e8;
 
 
@@ -112,7 +113,7 @@ const double dy = (end_y - start_y) / (1.0*n_glob_y);
 
 const int initialtype=100;
 
-const int save_freq=1000;
+const int save_freq=100;
 
 const double CFL=0.00001;
 
