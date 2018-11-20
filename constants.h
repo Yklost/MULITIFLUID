@@ -6,12 +6,12 @@ const double me = 9.109e-28 ; //g
 const double mi = 1.6726e-24 ; //g
 const double e = 4.8032e-10; //statC
 
-const double k_b=1.381e-16 ; //erg/K
+const double k_b = 1.381e-16 ; //erg/K
 
 const double me_mi = me/mi;
 
-const double III_erg = 10.e0 * 1.6e-12 ; //eV to erg, first ionisation potential
-const double III_eV = 10.e0;
+const double III_erg = 13.6e0 * 1.6e-12 ; //eV to erg, first ionisation potential
+const double III_eV = 13.e6;
 
 const double eVtoerg = 1.6e-12;
 const double eVtoerg2 = (1.0/6.2415e11)*(1.0/6.2415e11);
@@ -22,7 +22,7 @@ const double beta_0 = 0.7;
 const double gamma_0 = 3.2;
 
 
-const int n_var=37; 
+const int n_var=36; 
 const int n_consvar = 14; 
 const int n_dim = 2; //number dimensions
 
@@ -80,31 +80,30 @@ const int k_ion_ = 23;
 const int k_rec_ = 24;
 const int a_ni_ = 25;
 const int a_ne_ = 26;
-const int a_ei_ = 27;
 
-const int QQQ_  = 28;
-const int Q_N_  = 29;
+const int QQQ_  = 27;
+const int Q_N_  = 28;
 
-const int q_x_ = 30;
-const int q_y_ = 31;
-const int q_z_ = 32;
+const int q_x_ = 29;
+const int q_y_ = 30;
+const int q_z_ = 31;
 
-const int tem_i_ = 33;
-const int tem_n_ = 34;
-const int tem_e_ = 35;
+const int tem_i_ = 32;
+const int tem_n_ = 33;
+const int tem_e_ = 34;
 
-const int vidte_ = 36;
-
+const int vidte_ = 35;
 
 
-const double ggg = -1.0;//-1.0; //gravity
+
+const double ggg = 0.0;//-1.0; //gravity
 const double gam = 5.0/3.0; /// 
 
 
 const double start_x = 0.0;
-const double start_y = 8e7;
+const double start_y = 8.0e7;
 
-const double end_x = 2e8;
+const double end_x = 2.0e8;
 const double end_y = 1.5e8;
 
 
@@ -114,7 +113,7 @@ const double dy = (end_y - start_y) / (1.0*n_glob_y);
 
 const int initialtype=100;
 
-const int save_freq=1000;
+const int save_freq=100;
 
 const double CFL=0.00001;
 

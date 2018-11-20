@@ -163,7 +163,7 @@ double rho_n_rho_t;
 double rho_i_rho_t;
 
 
-double lambda, tau_e, sigma_tr_ion, sigma_coul, freq_ei;
+double lambda, tau_e, sigma_tr_ion, sigma_coul, freq_ei, a_ei;
 
 double v_x_r, v_y_r, v_z_r;
 
@@ -220,25 +220,25 @@ double sigmaIoniz_e; //characterisitic ionization section
                //sigmaIoniz_e = 2.0e-17*u[tem_e_][i][j]; //here C_i = 2.0e-17 is a coeffitient, units cm^2/eV     
      
 	   	       
-	       lambda = 17 ;//23.4 - 1.15 * log10(u[rho_i_][i][j] / mi) + 3.45 * log10(u[tem_e_][i][j]);
+	       lambda = 17.0 ;//23.4 - 1.15 * log10(u[rho_i_][i][j] / mi) + 3.45 * log10(u[tem_e_][i][j]);
 	       
-	       tau_e = (3.5e5 / lambda) * pow(u[tem_e_][i][j] / 11600, 1.5) / (u[rho_i_][i][j] / mi);  
+	       tau_e = (3.5e5 / lambda) * pow(u[tem_e_][i][j] / 11600.0, 1.5) / (u[rho_i_][i][j] / mi);  
 	       
-	       u[k_ion_][i][j] = 2e-17 * sqrt(8 * k_b * u[tem_e_][i][j] / PI / me) * (III_erg / k_b / u[tem_e_][i][j] + 2.e0) * exp (-III_erg / k_b / u[tem_e_][i][j]); //tem in K 
+	       u[k_ion_][i][j] = 2e-17 * sqrt(8.0 * k_b * u[tem_e_][i][j] / PI / me) * (III_erg / k_b / u[tem_e_][i][j] + 2.e0) * exp (-III_erg / k_b / u[tem_e_][i][j]); //tem in K 
 	       
-	       u[k_rec_][i][j] = 0; 
+	       u[k_rec_][i][j] = 0.0; 
 		
-	       sigma_tr_ion = 2 * sqrt(2) * 0.88e-16 * sqrt(4.5 * e * e * PI / 2 / 0.5e-8 / 4 / k_b / u[tem_i_][i][j]); //tem in K, sigma tranport
+	       sigma_tr_ion = 2.0 * sqrt(2) * 0.88e-16 * sqrt(4.5 * e * e * PI / 2.0 / 0.5e-8 / 4.0 / k_b / u[tem_i_][i][j]); //tem in K, sigma tranport
 		
-	       sigma_coul  = 4 * PI * pow(e, 4) * lambda / 9 / pow(k_b*u[tem_e_][i][j], 2); //tem in K, sigma coulomb
+	       sigma_coul  = 4.0 * PI * pow(e, 4) * lambda / 9.0 / pow(k_b*u[tem_e_][i][j], 2.0); //tem in K, sigma coulomb
 		
-               freq_ei = 4 * sqrt(3) * pow(e,4) * u[rho_i_][i][j] * lambda / 9 / mi / sqrt(me) / pow(k_b * u[tem_e_][i][j], 1.5) ; //tem in K, coulomb collisions 
+               freq_ei = 4.0 * sqrt(3.0) * pow(e,4.0) * u[rho_i_][i][j] * lambda / 9.0 / mi / sqrt(me) / pow(k_b * u[tem_e_][i][j], 1.5) ; //tem in K, coulomb collisions 
 	       
 	       u[a_ni_][i][j] = mi * u[rho_i_][i][j] * u[rho_n_][i][j] * sigma_tr_ion * v_y_r / mi / mi;  
 	       	       
-	       u[a_ne_][i][j] = me * u[rho_i_][i][j] / mi * 10e-16 * u[rho_n_][i][j] / mi * 4.2e7 * sqrt(u[tem_e_][i][j] / 11600) ; // tem in K 
+	       u[a_ne_][i][j] = me * u[rho_i_][i][j] / mi * 10e-16 * u[rho_n_][i][j] / mi * 4.2e7 * pow(u[tem_e_][i][j] / 11600.0, 0.5) ; // tem in K 
 		       
-	       u[a_ei_][i][j] = me * u[rho_i_][i][j] * freq_ei / mi;     
+	       a_ei = me * u[rho_i_][i][j] * freq_ei / mi;     
   
   
                u[vidte_][i][j] = u[v_x_i_][i][j] * dte_x + u[v_y_i_][i][j] * dte_y + u[v_z_i_][i][j] * dte_z;
@@ -252,8 +252,8 @@ double sigmaIoniz_e; //characterisitic ionization section
 	       
 ///MOVE q TO FLUXES! and reshuffle.	       
 	       
-	       u[q_x_][i][j] = (u[rho_i_][i][j]/mi) * u[tem_e_][i][j] * ( beta_0 * v_x_r - (tau_e / me) * gamma_0 * dte_x );
-	       u[q_y_][i][j] = (u[rho_i_][i][j]/mi) * u[tem_e_][i][j] * ( beta_0 * v_y_r - (tau_e / me) * gamma_0 * dte_y );
+	       u[q_x_][i][j] = (u[rho_i_][i][j]/mi) * u[tem_e_][i][j] / 11600.0 * ( beta_0 * v_x_r - (tau_e / me) * gamma_0 * dte_x );
+	       u[q_y_][i][j] = (u[rho_i_][i][j]/mi) * u[tem_e_][i][j] / 11600.0 * ( beta_0 * v_y_r - (tau_e / me) * gamma_0 * dte_y );
 	       u[q_z_][i][j] = 0.0;
 	       
 	       

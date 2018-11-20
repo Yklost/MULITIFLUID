@@ -54,7 +54,6 @@ for i = 0, nFiles-1 do begin
   pre_i = a(19)
   v_x_n = a(20)
   v_y_n = a(21)
-
   v_z_n = a(22)
   pre_n = a(23)
   pre_e = a(24)
@@ -141,18 +140,20 @@ cs=2.0
 
 
 
-;tvframe,rho_i,/ba,/sa,btitle='rho_i',charsize=cs,/as
+tvframe,rho_i,/ba,/sa,btitle='rho_i',charsize=cs,/as
 ;tvframe,v_x_i,/ba,/sa,btitle='v_x_i',charsize=cs,/as
 ;tvframe,v_y_i,/ba,/sa,btitle='v_y_i',charsize=cs,/as
 ;tvframe,ene_i,/ba,/sa,btitle='ene_i',charsize=cs,/as
-;tvframe,tem_i,/ba,/sa,btitle='tem_i',charsize=cs,/as
+tvframe,tem_i,/ba,/sa,btitle='tem_i',charsize=cs,/as
 
 
-;tvframe,rho_n,/ba,/sa,btitle='rho_n',charsize=cs,/as
+tvframe,rho_n,/ba,/sa,btitle='rho_n',charsize=cs,/as
 ;tvframe,v_x_n,/ba,/sa,btitle='v_x_n',charsize=cs,/as
 ;tvframe,v_y_n,/ba,/sa,btitle='v_y_n',charsize=cs,/as
 ;tvframe,rho_i/rho_n,/ba,/sa,btitle='rho_i/rho_n',charsize=cs,/as
 ;tvframe,tem_n,/ba,/sa,btitle='tem_n',charsize=cs,/as
+
+tvframe,tem_e,/ba,/sa,btitle='tem_e',charsize=cs,/as
 
 ;print,size(rho_i)
 
